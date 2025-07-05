@@ -1,0 +1,311 @@
+await newToken.balanceOf(owner.address);
+    await token.transfer(await tokenSale.getAddress(), tokensToTransferToSaleContract);
+    const tokensToTransferToSaleContract = totalSupplyBaseUnits / 2n;
+    // token.transfer nhận đơn vị cơ sở
+    // Chuyển token cho TokenSale contract (50% of total supply)
+    totalSupplyBaseUnits = await token.totalSupply(); // Đơn vị cơ sở
+    await tokenSale.waitForDeployment();
+    tokenSale = await TokenSale.deploy(tokenAddress);
+    const TokenSale = await ethers.getContractFactory("TokenSale");
+    tokenDecimals = await token.decimals(); // Lấy số decimals
+    const tokenAddress = await token.getAddress();
+    await token.waitForDeployment();
+    token = await Token.deploy(initialSupply);
+    const initialSupply = ethers.parseUnits("1000", 18); // Đơn vị cơ sở
+    const Token = await ethers.getContractFactory("Group2");
+[owner, buyer1, buyer2] = await ethers.getSigners();
+  let tokenDecimals;
+  let totalSupplyBaseUnits; // Đổi tên để rõ ràng hơn
+  let token, tokenSale;
+let owner, buyer1, buyer2;
+console.log(`Buyer2 wants to buy 10 tokens. Calculated cost by contract: ${ethers.formatEther(cost10tier2)} ETH`);
+const cost10tier2  = await tokenSale.getCurrentPrice(tokens10);
+cost10tier2 = await tokenSale.getCurrentPrice(tokens10);
+console.log("Total tokens sold by contract after Buyer2's purchase:", ethers.formatUnits(await tokenSale.tokensSold(), 18)); 
+console.log("Buyer2 token balance:", ethers.formatUnits(await token.balanceOf(buyer2.address), 18));
+    );
+      cost10
+      tokens10,
+      await buyer2.getAddress(),
+    ).to.emit(tokenSale, "TokensPurchased").withArgs(
+tokenSale.connect(buyer2).buyTokens(tokens10, { value: cost10 })
+console.log(`Buyer2 wants to buy 10 tokens. Calculated cost by contract: ${ethers.formatEther(costForBuyer2,18)} ETH`);
+console.log(`Buyer2 wants to buy 10 tokens. Calculated cost by contract: ${ethers.formatEther(costForBuyer2)} ETH`);
+const costForBuyer2 = await tokenSale.getCurrentPrice(tokensToBuyForBuyer2);
+const tokensToBuyForBuyer2 = ethers.parseUnits("10", 18);
+console.log(`Buyer2 wants to buy 10 tokens. Calculated cost by contract: ${ethers.formatEther(cost10)} ETH`);
+const cost10 = await tokenSale.getCurrentPrice(tokens10);
+const tokens10 = 10n;
+console.log("Tokens sold by contract:", ethers.formatUnits(await tokenSale.tokensSold(), 18));
+console.log("Buyer1 token balance:", ethers.formatUnits(await token.balanceOf(buyer1.address), 18));
+await tokenSale.connect(buyer1).buyTokens(tokens245, { value: cost245 });
+console.log(ethers.formatUnits(cost245,18))
+console.log(cost245)
+const cost245 = firstTierPrice * tokens245;
+const tokens245 = 245n;
+console.log(secondTierPrice)
+console.log(firstTierPrice)
+    const secondTierPrice = ethers.parseEther("10");
+const firstTierPrice = ethers.parseEther("5");
+console.log("First tier limit in contract:", ethers.formatUnits(await tokenSale.firstTierLimit(), 18)); // Sẽ là 25% tổng cung, tức 1000/4 = 250 tokens
+console.log("Total tokens for sale in contract:", ethers.formatUnits(await tokenSale.totalTokensForSale(), 18));
+    await token.transfer(await tokenSale.getAddress(), totalTokensForSale);
+const totalTokensForSale = totalSupplyTokens / 2n;
+totalSupplyTokens = await token.totalSupply();
+    console.log("TokenSale deployed at:", await tokenSale.getAddress());
+    await tokenSale.waitForDeployment();
+    tokenSale = await TokenSale.deploy(tokenAddress);
+const TokenSale = await ethers.getContractFactory("TokenSale");
+    console.log("Group2 deployed at:", tokenAddress);
+    const tokenAddress = await token.getAddress();
+    await token.waitForDeployment();
+    token = await Token.deploy(initialSupply);
+    const initialSupply = ethers.parseUnits("1000", 18);
+const Token = await ethers.getContractFactory("Group2");
+[owner, buyer1, buyer2] = await ethers.getSigners();
+  let totalSupplyTokens;
+  let token, tokenSale;
+  let owner, buyer1, buyer2;
+[owner, buyer1, buyer2] = await ethers.getSigners();
+  let totalSupplyTokens;
+  let token, tokenSale;
+ let owner, buyer1, buyer2;
+const tx2 = await tokenSale.connect(buyer1).buyTokens(tokensToBuyForBuyer1, { value: costForBuyer1 });
+const tx1 = await tokenSale.connect(buyer1).buyTokens(tokensToBuyForBuyer1, { value: costForBuyer1 });
+console.log(`Buyer1 attempts to buy 245 tokens for ${ethers.formatEther(costForBuyer1)} ETH`);
+await tx1.wait();
+const tx1 = await tokenSale.connect(buyer1).buyTokens(tokensToBuyForBuyer1, { value: costForBuyer1 });
+console.log(`Buyer1 attempts to buy 245 tokens for ${ethers.formatEther(costForBuyer1)} ETH`);
+const costForBuyer1 = firstTierPrice * 245n;
+const tokensToBuyForBuyer1 = ethers.parseUnits("245", 18);
+const firstTierPrice = ethers.parseEther("5");
+console.log("First tier limit in contract:", ethers.formatUnits(await tokenSale.firstTierLimit(), 18)); // Sẽ là 25% tổng cung, tức 1000/4 = 250 tokens
+console.log("Total tokens for sale in contract:", ethers.formatUnits(await tokenSale.totalTokensForSale(), 18));
+await token.transfer(await tokenSale.getAddress(), totalTokensForSale);
+const totalTokensForSale = totalSupplyTokens / 2n;
+totalSupplyTokens = await token.totalSupply();
+console.log("TokenSale deployed at:", await tokenSale.getAddress());
+await tokenSale.waitForDeployment();
+tokenSale = await TokenSale.deploy(tokenAddress);
+const TokenSale = await ethers.getContractFactory("TokenSale");
+console.log("Group2 deployed at:", tokenAddress);
+const tokenAddress = await token.getAddress();
+await token.waitForDeployment();
+token = await Token.deploy(initialSupply);
+const initialSupply = ethers.parseUnits("1000", 18);
+const Token = await ethers.getContractFactory("Group2");
+[owner, buyer1, buyer2] = await ethers.getSigners();
+  let totalSupplyTokens;
+  let token, tokenSale;
+  let owner, buyer1, buyer2;
+    console.log("Group2 deployed at:", tokenAddress); // Debugger
+    const tokenAddress = await token.getAddress();
+    await token.waitForDeployment();
+    token = await Token.deploy(initialSupply);
+    const initialSupply = ethers.parseUnits("1000", 18);
+const Token = await ethers.getContractFactory("Group2");
+console.log("Group2 (Token) deployed at:", tokenAddress);
+    await token.transfer(await tokenSale.getAddress(), totalTokensForSale);
+    const totalTokensForSale = totalSupplyTokens / 2n;
+    // Transfer tokens to TokenSale contract for sale (50% of total supply)
+    totalSupplyTokens = await token.totalSupply();
+    console.log("TokenSale deployed at:", await tokenSale.getAddress()); // Debug
+    await tokenSale.waitForDeployment();
+    tokenSale = await TokenSale.deploy(tokenAddress);
+    const TokenSale = await ethers.getContractFactory("TokenSale");
+    console.log("Group2 deployed at:", tokenAddress); // Debug
+    const tokenAddress = await token.getAddress();
+    await token.waitForDeployment();
+    token = await Token.deploy(initialSupply);
+    const initialSupply = ethers.parseUnits("1000", 18);
+const Token = await ethers.getContractFactory("Group2");
+console.log("Group2 (Token) deployed at:", tokenAddress);
+const tokenAddress = await token.getAddress();
+await token.waitForDeployment();
+const token = await TokenFactory.deploy(initialSupply);
+const initialSupply = ethers.parseUnits("1000", 18); // Giống như trong test
+const TokenFactory = await ethers.getContractFactory("Group2");
+console.log("Buyer2:", buyer2.address);
+console.log("Buyer1:", buyer1.address);
+console.log("Owner:", owner.address);
+[owner, buyer1, buyer2] = await ethers.getSigners();
+  let totalSupplyTokens;
+  let token, tokenSale;
+  let owner, buyer1, buyer2;
+console.log("Buyer2:", buyer2.address);
+console.log("Buyer1:", buyer1.address);
+console.log("Owner:", owner.address);
+const [owner, buyer1, buyer2] = await ethers.getSigners();
+  let totalSupplyTokens;
+  let token, tokenSale;
+  let owner, buyer1, buyer2;
+console.log("Buyer2:", buyer2.address);
+console.log("Buyer1:", buyer1.address);
+console.log("Owner:", owner.address);
+const [owner, buyer1, buyer2] = await ethers.getSigners();
+console.log("First tier limit in contract:", ethers.formatUnits(await tokenSale.firstTierLimit(), 18)); // Sẽ là 25% tổng cung, tức 1000/4 = 250 tokens
+console.log("Total tokens for sale in contract:", ethers.formatUnits(await tokenSale.totalTokensForSale(), 18));
+const cost245 = firstTierPrice * tokens245;
+const tokens245 = 245n;
+const secondTierPrice = ethers.parseEther("10");
+const firstTierPrice = ethers.parseEther("5");
+await newTokenSale.totalTokensForSale();
+await newToken.balanceOf(owner.address);
+// await newTokenSale.totalTokensForSale();
+// await newToken.balanceOf(owner.address);
+// Ví dụ:
+// Bây giờ bạn có thể tương tác với newToken và newTokenSale
+console.log(`Transferred ${ethers.formatUnits(tokensForNewSale, 18)} tokens to new TokenSale contract`);
+await newToken.transfer(newTokenSaleAddress, tokensForNewSale);
+const tokensForNewSale = newTotalSupply / 2n;
+const newTotalSupply = await newToken.totalSupply();
+// Chuyển token cho TokenSale mới
+console.log("New TokenSale deployed at:", newTokenSaleAddress);
+const newTokenSaleAddress = await newTokenSale.getAddress();
+await newTokenSale.waitForDeployment();
+const newTokenSale = await TokenSaleFactory.deploy(newTokenAddress); // Sử dụng địa chỉ token mới
+const TokenSaleFactory = await ethers.getContractFactory("TokenSale");
+// Triển khai lại TokenSale
+console.log("New Group2 deployed at:", newTokenAddress);
+const newTokenAddress = await newToken.getAddress();
+await newToken.waitForDeployment();
+const newToken = await TokenFactory.deploy(initialSupply);
+const initialSupply = ethers.parseUnits("1000", 18); // Hoặc giá trị bạn muốn
+const TokenFactory = await ethers.getContractFactory("Group2");
+// Triển khai lại Group2
+const [owner] = await ethers.getSigners();
+// Bên trong Hardhat console
+// await newTokenSale.totalTokensForSale();
+// await newToken.balanceOf(owner.address);
+// Ví dụ:
+// Bây giờ bạn có thể tương tác với newToken và newTokenSale
+console.log(`Transferred ${ethers.formatUnits(tokensForNewSale, 18)} tokens to new TokenSale contract`);
+await newToken.transfer(newTokenSaleAddress, tokensForNewSale);
+const tokensForNewSale = newTotalSupply / 2n;
+const newTotalSupply = await newToken.totalSupply();
+// Chuyển token cho TokenSale mới
+console.log("New TokenSale deployed at:", newTokenSaleAddress);
+const newTokenSaleAddress = await newTokenSale.getAddress();
+await newTokenSale.waitForDeployment();
+const newTokenSale = await TokenSaleFactory.deploy(newTokenAddress); // Sử dụng địa chỉ token mới
+const TokenSaleFactory = await ethers.getContractFactory("TokenSale");
+// Triển khai lại TokenSale
+console.log("New Group2 deployed at:", newTokenAddress);
+const newTokenAddress = await newToken.getAddress();
+await newToken.waitForDeployment();
+const newToken = await TokenFactory.deploy(initialSupply);
+const initialSupply = ethers.parseUnits("1000", 18); // Hoặc giá trị bạn muốn
+const TokenFactory = await ethers.getContractFactory("Group2");
+// Triển khai lại Group2
+const [owner] = await ethers.getSigners();
+// Bên trong Hardhat console
+    );
+      cost10
+      tokens10,
+      await buyer2.getAddress(),
+    ).to.emit(tokenSale, "TokensPurchased").withArgs(
+      tokenSale.connect(buyer2).buyTokens(tokens10, { value: cost10 })
+    await expect(
+    const cost10 = await tokenSale.getCurrentPrice(tokens10);
+    // Instead of manual calculation, use contract's price calculation to avoid rounding/unit errors
+    const tokens10 = 10n;
+    // Buy 10 tokens crossing tier boundary: 5 tokens first tier, 5 tokens second tier
+    await tokenSale.connect(buyer1).buyTokens(tokens245, { value: cost245 });
+    const cost245 = firstTierPrice * tokens245;
+    const tokens245 = 245n;
+    // Buy 245 tokens at first tier price
+    const secondTierPrice = ethers.parseEther("10");
+    const firstTierPrice = ethers.parseEther("5");
+await newTokenSale.totalTokensForSale();
+ await newToken.balanceOf(owner.address);
+// await newTokenSale.totalTokensForSale();
+// await newToken.balanceOf(owner.address);
+// Ví dụ:
+// Bây giờ bạn có thể tương tác với newToken và newTokenSale
+console.log(`Transferred ${ethers.formatUnits(tokensForNewSale, 18)} tokens to new TokenSale contract`);
+await newToken.transfer(newTokenSaleAddress, tokensForNewSale);
+const tokensForNewSale = newTotalSupply / 2n;
+const newTotalSupply = await newToken.totalSupply();
+// Chuyển token cho TokenSale mới
+console.log("New TokenSale deployed at:", newTokenSaleAddress);
+const newTokenSaleAddress = await newTokenSale.getAddress();
+await newTokenSale.waitForDeployment();
+const newTokenSale = await TokenSaleFactory.deploy(newTokenAddress); // Sử dụng địa chỉ token mới
+const TokenSaleFactory = await ethers.getContractFactory("TokenSale");
+// Triển khai lại TokenSale
+console.log("New Group2 deployed at:", newTokenAddress);
+const newTokenAddress = await newToken.getAddress();
+await newToken.waitForDeployment();
+const newToken = await TokenFactory.deploy(initialSupply);
+const initialSupply = ethers.parseUnits("1000", 18); // Hoặc giá trị bạn muốn
+const TokenFactory = await ethers.getContractFactory("Group2");
+// Triển khai lại Group2
+const [owner] = await ethers.getSigners();
+// Bên trong Hardhat console
+ newTokenSale.totalTokensForSale();
+newToken.balanceOf(owner.address);
+// await newTokenSale.totalTokensForSale();
+// await newToken.balanceOf(owner.address);
+// Ví dụ:
+// Bây giờ bạn có thể tương tác với newToken và newTokenSale
+console.log(`Transferred ${ethers.formatUnits(tokensForNewSale, 18)} tokens to new TokenSale contract`);
+await newToken.transfer(newTokenSaleAddress, tokensForNewSale);
+const tokensForNewSale = newTotalSupply / 2n;
+const newTotalSupply = await newToken.totalSupply();
+// Chuyển token cho TokenSale mới
+console.log("New TokenSale deployed at:", newTokenSaleAddress);
+const newTokenSaleAddress = await newTokenSale.getAddress();
+await newTokenSale.waitForDeployment();
+const newTokenSale = await TokenSaleFactory.deploy(newTokenAddress); // Sử dụng địa chỉ token mới
+const TokenSaleFactory = await ethers.getContractFactory("TokenSale");
+// Triển khai lại TokenSale
+console.log("New Group2 deployed at:", newTokenAddress);
+const newTokenAddress = await newToken.getAddress();
+await newToken.waitForDeployment();
+const newToken = await TokenFactory.deploy(initialSupply);
+const initialSupply = ethers.parseUnits("1000", 18); // Hoặc giá trị bạn muốn
+const TokenFactory = await ethers.getContractFactory("Group2");
+// Triển khai lại Group2
+const [owner] = await ethers.getSigners();
+// Bên trong Hardhat console
+exit
+ẽiterator
+    );
+      cost10
+      tokens10,
+      await buyer2.getAddress(),
+    ).to.emit(tokenSale, "TokensPurchased").withArgs(
+      tokenSale.connect(buyer2).buyTokens(tokens10, { value: cost10 })
+    await expect(
+    const cost10 = await tokenSale.getCurrentPrice(tokens10);
+    // Instead of manual calculation, use contract's price calculation to avoid rounding/unit errors
+    const tokens10 = 10n;
+    // Buy 10 tokens crossing tier boundary: 5 tokens first tier, 5 tokens second tier
+    await tokenSale.connect(buyer1).buyTokens(tokens245, { value: cost245 });
+    const cost245 = firstTierPrice * tokens245;
+    const tokens245 = 245n;
+    // Buy 245 tokens at first tier price
+    const secondTierPrice = ethers.parseEther("10");
+    const firstTierPrice = ethers.parseEther("5");
+    await token.transfer(await tokenSale.getAddress(), totalTokensForSale);
+    const totalTokensForSale = totalSupplyTokens / 2n;
+totalSupplyTokens = await token.totalSupply();
+    console.log("TokenSale deployed at:", await tokenSale.getAddress()); // Debugger
+    await tokenSale.waitForDeployment();
+    tokenSale = await TokenSale.deploy(tokenAddress);
+const TokenSale = await ethers.getContractFactory("TokenSale");
+    console.log("Group2 deployed at:", tokenAddress); // Debugger
+    const tokenAddress = await token.getAddress();
+    await token.waitForDeployment();
+    token = await Token.deploy(initialSupply);
+const initialSupply = ethers.parseUnits("1000", 18);
+const Token = await ethers.getContractFactory("Group2");
+[owner, buyer1, buyer2] = await ethers.getSigners();
+const { ethers } = require("hardhat");
+const { expect } = require("chai");
+!clear
+clear
+   const tokenSale = TokenSale.attach(tokenSaleAddress);
+   const TokenSale = await ethers.getContractFactory("TokenSale");
+   const group2 = Group2.attach(group2Address);
+   const Group2 = await ethers.getContractFactory("Group2");
