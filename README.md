@@ -1,4 +1,4 @@
-# Project: ERC20 Token (GiangToken) and Exchange (UserTokenExchange) - Lab 03
+# Project: ERC20 Token and Exchange - Lab 03
 
 ## Project Description
 
